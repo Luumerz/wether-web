@@ -6,11 +6,17 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
+import { CurrentComponent } from './pages/current/current.component';
+import { ForecastComponent } from './pages/forecast/forecast.component';
+import { HistoryComponent } from './pages/history/history.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    CurrentComponent,
+    ForecastComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,48 @@
+<div class="d-flex flex-column min-vh-100">
+
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg" style="background-color: #00bfff;">
+        <div class="container p-2">
+            <a class="navbar-brand text-white fs-1" routerLink="/">🌦️ Wether</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse fs-4" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" routerLink="/current">Current</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" routerLink="/forecast">Forecast</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" routerLink="/history">History</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="flex-fill main-content text-center d-flex flex-column justify-content-center align-items-center">
+        <h2 class="display-3 mb-4">Check the weather in real time</h2>
+        <p class="lead mb-5 fs-4">Temperatures, forecasts, and historical data for anywhere in the world are just a click
+            away.</p>
+
+        <div class="btn-group mb-5">
+            <a routerLink="/current" class="btn btn-outline-info btn-lg">🌤️ Current Weather</a>
+            <a routerLink="/forecast" class="btn btn-outline-info btn-lg">📅 Forecast</a>
+            <a routerLink="/history" class="btn btn-outline-info btn-lg">🕰️ History</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-white text-center py-3 fs-5" style="background-color: #00bfff;">
+        <div class="container">
+            <p class="mb-0">© 2025 Wether 🌦️ | Data by <a href="https://www.visualcrossing.com/weather-api"
+                    target="_blank" class="text-white text-decoration-underline">Visual Crossing</a></p>
+        </div>
+    </footer>
+
+</div>
