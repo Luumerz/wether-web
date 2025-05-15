@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WeatherService } from '../../services/weather.service';
 
 @Component({
   selector: 'app-forecast',
@@ -7,5 +8,18 @@ import { Component } from '@angular/core';
   styleUrl: './forecast.component.css'
 })
 export class ForecastComponent {
+  city: string = '';
+  forecastData: any;
 
+  constructor(private weatherService: WeatherService) { }
+
+  getForecast() {
+    if (!this.city) return;
+
+    this.weatherService.getWeather(this.city).subscribe(
+      (data) => {
+        this.forecastData = data;
+      }
+    );
+  }
 }

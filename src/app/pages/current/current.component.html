@@ -1,1 +1,130 @@
-<p>current works!</p>
+<div class="d-flex flex-column min-vh-100">
+
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg" style="background-color: #00bfff;">
+        <div class="container p-2">
+            <a class="navbar-brand text-white fs-1" routerLink="/">🌦️ Wether</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse fs-4" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" routerLink="/current">Current</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" routerLink="/forecast">Forecast</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" routerLink="/history">History</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="flex-fill main-content text-center d-flex flex-column justify-content-center align-items-center">
+        <div class="container text-center mt-5">
+            <h2 class="mb-4">Consulta el clima actual</h2>
+
+            <div class="d-flex justify-content-center mb-4">
+                <div class="input-group" style="max-width: 300px;">
+                    <input type="text" class="form-control" placeholder="Ciudad" [(ngModel)]="city">
+                    <button class="btn btn-outline-info" (click)="getWeatherData()">Consultar</button>
+                </div>
+            </div>
+
+            <!-- Tabla de resultados -->
+            <div *ngIf="weatherData" class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead class="table-primary">
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>📍 Ciudad</td>
+                            <td>{{ weatherData.address }}</td>
+                        </tr>
+                        <tr>
+                            <td>🌡️ Temperatura</td>
+                            <td>{{ weatherData.currentConditions.temp }} °C</td>
+                        </tr>
+                        <tr>
+                            <td>🥵 Sensación térmica</td>
+                            <td>{{ weatherData.currentConditions.feelslike }} °C</td>
+                        </tr>
+                        <tr>
+                            <td>💧 Humedad</td>
+                            <td>{{ weatherData.currentConditions.humidity }} %</td>
+                        </tr>
+                        <tr>
+                            <td>🌬️ Viento</td>
+                            <td>{{ weatherData.currentConditions.windspeed }} km/h</td>
+                        </tr>
+                        <tr>
+                            <td>🧭 Dirección viento</td>
+                            <td>{{ weatherData.currentConditions.winddir }}°</td>
+                        </tr>
+                        <tr>
+                            <td>💦 Punto de rocío</td>
+                            <td>{{ weatherData.currentConditions.dew }} °C</td>
+                        </tr>
+                        <tr>
+                            <td>☁️ Nubosidad</td>
+                            <td>{{ weatherData.currentConditions.cloudcover }} %</td>
+                        </tr>
+                        <tr>
+                            <td>🌤️ Condiciones</td>
+                            <td>{{ weatherData.currentConditions.conditions }}</td>
+                        </tr>
+                        <tr>
+                            <td>📊 Presión</td>
+                            <td>{{ weatherData.currentConditions.pressure }} hPa</td>
+                        </tr>
+                        <tr>
+                            <td>☀️ UV Index</td>
+                            <td>{{ weatherData.currentConditions.uvindex }}</td>
+                        </tr>
+                        <tr>
+                            <td>👁️ Visibilidad</td>
+                            <td>{{ weatherData.currentConditions.visibility }} km</td>
+                        </tr>
+                        <tr>
+                            <td>🕑 Hora local</td>
+                            <td>{{ weatherData.currentConditions.datetime }}</td>
+                        </tr>
+                        <tr>
+                            <td>🌅 Salida del sol</td>
+                            <td>{{ weatherData.currentConditions.sunrise }}</td>
+                        </tr>
+                        <tr>
+                            <td>🌇 Puesta del sol</td>
+                            <td>{{ weatherData.currentConditions.sunset }}</td>
+                        </tr>
+                        <tr>
+                            <td>🖼️ Icono del clima</td>
+                            <td>
+                                <img [src]="'https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/PNG/4th%20Set%20-%20Color/' + weatherData.currentConditions.icon + '.png'"
+                                    alt="icono clima" style="width: 60px;">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-white text-center py-3 fs-5" style="background-color: #00bfff;">
+        <div class="container">
+            <p class="mb-0">© 2025 Wether 🌦️ | Data by <a href="https://www.visualcrossing.com/weather-api"
+                    target="_blank" class="text-white text-decoration-underline">Visual Crossing</a></p>
+        </div>
+    </footer>
+
+</div>

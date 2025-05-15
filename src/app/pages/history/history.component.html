@@ -1,1 +1,81 @@
-<p>history works!</p>
+<div class="d-flex flex-column min-vh-100">
+
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg" style="background-color: #00bfff;">
+        <div class="container p-2">
+            <a class="navbar-brand text-white fs-1" routerLink="/">🌦️ Wether</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse fs-4" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" routerLink="/current">Current</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" routerLink="/forecast">Forecast</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" routerLink="/history">History</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="flex-fill main-content text-center d-flex flex-column justify-content-center align-items-center">
+        <div class="container text-center mt-5">
+            <h2 class="mb-4">Histórico de clima</h2>
+
+            <div class="d-flex justify-content-center flex-wrap gap-2 mb-4">
+                <input type="text" class="form-control" style="max-width: 200px;" placeholder="Ciudad"
+                    [(ngModel)]="city">
+                <input type="date" class="form-control" style="max-width: 200px;" [(ngModel)]="startDate">
+                <input type="date" class="form-control" style="max-width: 200px;" [(ngModel)]="endDate">
+                <button class="btn btn-primary" (click)="getHistory()">Consultar</button>
+            </div>
+
+            <!-- Tabla de resultados -->
+            <div *ngIf="historyData" class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>📅 Fecha</th>
+                            <th>🌡️ Máx (°C)</th>
+                            <th>🌡️ Mín (°C)</th>
+                            <th>💧 Humedad (%)</th>
+                            <th>🌬️ Viento (km/h)</th>
+                            <th>🌤️ Condición</th>
+                            <th>🖼️</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let day of historyData.days">
+                            <td>{{ day.datetime }}</td>
+                            <td>{{ day.tempmax }}</td>
+                            <td>{{ day.tempmin }}</td>
+                            <td>{{ day.humidity }}</td>
+                            <td>{{ day.windspeed }}</td>
+                            <td>{{ day.conditions }}</td>
+                            <td>
+                                <img [src]="'https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/PNG/4th%20Set%20-%20Color/' + day.icon + '.png'"
+                                    alt="icono" style="width: 50px;">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-white text-center py-3 fs-5" style="background-color: #00bfff;">
+        <div class="container">
+            <p class="mb-0">© 2025 Wether 🌦️ | Data by <a href="https://www.visualcrossing.com/weather-api"
+                    target="_blank" class="text-white text-decoration-underline">Visual Crossing</a></p>
+        </div>
+    </footer>
+
+</div>

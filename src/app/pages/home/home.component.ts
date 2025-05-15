@@ -8,16 +8,5 @@ import { WeatherService } from '../../services/weather.service';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  city: string = '';
-  weatherData: any;
-
-  constructor(private weatherService: WeatherService) {}
-
-  getWeatherData() {
-    this.weatherService.getWeather(this.city).subscribe(
-      (data) => {
-        this.weatherData = data;
-      }
-    );
-  }
+  
 }
