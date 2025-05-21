@@ -18,7 +18,7 @@ export class HistoryComponent {
   getHistory() {
     if (!this.city || !this.startDate || !this.endDate) return;
 
-    this.weatherService.getWeather(this.city).subscribe(
+    this.weatherService.getHistory(this.city, this.startDate, this.endDate).subscribe(
       (data) => {
         this.historyData = data;
       }
