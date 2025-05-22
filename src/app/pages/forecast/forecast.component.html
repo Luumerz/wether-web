@@ -1,7 +1,7 @@
-<div class="d-flex flex-column min-vh-100">
+<div class="d-flex flex-column min-vh-100 p-lg-3 p-sm-5">
 
     <!-- Header -->
-    <header class="navbar navbar-expand-lg" style="background-color: #00bfff;">
+    <header class="navbar navbar-expand-lg">
         <div class="container p-2">
             <a class="navbar-brand text-white fs-1" routerLink="/"><img src="img/logo-modified.png" style="max-height: 100px;" class="img-fluid" alt="logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -10,14 +10,14 @@
 
             <div class="collapse navbar-collapse fs-4" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link text-white" routerLink="/current">Current</a>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-blue-ocean" routerLink="/current">Current</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" routerLink="/forecast">Forecast</a>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-blue-ocean" routerLink="/forecast">Forecast</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" routerLink="/history">History</a>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-blue-ocean" routerLink="/history">History</a>
                     </li>
                 </ul>
             </div>
@@ -32,7 +32,7 @@
             <div class="d-flex justify-content-center mb-4">
                 <div class="input-group" style="max-width: 300px;">
                     <input type="text" class="form-control" placeholder="Ciudad" [(ngModel)]="city">
-                    <button class="btn btn-outline-info" (click)="getForecast()">Consultar</button>
+                    <button class="btn btn-outline-blue-ocean" (click)="getForecast()">Consultar</button>
                 </div>
             </div>
 
@@ -73,10 +73,10 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer text-white text-center py-3 fs-5" style="background-color: #00bfff;">
-        <div class="container">
-            <p class="mb-0">© 2025 Wether 🌦️ | Data by <a href="https://www.visualcrossing.com/weather-api"
-                    target="_blank" class="text-white text-decoration-underline">Visual Crossing</a></p>
+    <footer class="footer text-white text-center py-3 fs-5">
+        <div class="container text-blue-ocean text-center">
+            <p class="mb-0">© 2025 Wether <img src="img/logo-modified.png" style="max-height: 20px;" class="img-fluid" alt="logo"> | Data by <a href="https://www.visualcrossing.com/weather-api"
+                    target="_blank" class="text-blue-ocean text-decoration-none fw-bold">Visual Crossing</a></p>
         </div>
     </footer>
 

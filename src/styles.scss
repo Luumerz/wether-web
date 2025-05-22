@@ -1,0 +1,59 @@
+/* You can add global styles to this file, and also import other style files */
+$blue-ocean: #0077b6;
+$font-family-ancizar-serif: 'Ancizar Serif', serif;
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+.btn-blue-ocean {
+    background-color: $blue-ocean;
+    border-color: darken($blue-ocean, 10%);
+    color: white;
+
+    &:hover,
+    &:focus {
+        background-color: darken($blue-ocean, 7%);
+        border-color: darken($blue-ocean, 7%);
+        color: white;
+    }
+}
+
+// Botón outline
+.btn-outline-blue-ocean {
+    color: $blue-ocean !important;
+    border: 2px solid $blue-ocean !important;
+    background-color: transparent !important;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-outline-blue-ocean:hover,
+.btn-outline-blue-ocean:focus {
+    background-color: $blue-ocean !important;
+    color: #fff !important;
+}
+
+// Fondo
+.bg-blue-ocean {
+    background-color: $blue-ocean !important;
+    color: white;
+}
+
+// Texto
+.text-blue-ocean {
+    color: $blue-ocean !important;
+}
+
+// Borde
+.border-blue-ocean {
+    border: 1px solid $blue-ocean !important;
+}
+
+@font-face {
+    font-family: 'Ancizar Serif';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/assets/fonts/Ancizar-Serif/ancizarsherif-VariableFont.ttf') format('truetype');
+}
+
+.font-ancizar-sherif {
+    font-family: $font-family-ancizar-serif, serif;
+}
