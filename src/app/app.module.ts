@@ -9,6 +9,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { CurrentComponent } from './pages/current/current.component';
 import { ForecastComponent } from './pages/forecast/forecast.component';
 import { HistoryComponent } from './pages/history/history.component';
+import { NotfoundComponent } from './pages/notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HistoryComponent } from './pages/history/history.component';
     HomeComponent,
     CurrentComponent,
     ForecastComponent,
-    HistoryComponent
+    HistoryComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
