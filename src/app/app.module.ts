@@ -10,6 +10,7 @@ import { CurrentComponent } from './pages/current/current.component';
 import { ForecastComponent } from './pages/forecast/forecast.component';
 import { HistoryComponent } from './pages/history/history.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
+import { uppercasePipe } from './common/pipes/uppercase.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    uppercasePipe
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]
